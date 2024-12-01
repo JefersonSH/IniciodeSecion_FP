@@ -1,8 +1,7 @@
-import java.util.*;
 import javax.swing.*;
+import java.awt.event.*;
+
 public class finalRegistro {
-    public ArrayList<String> user = new ArrayList<String>();
-    public ArrayList<String> password = new ArrayList<String>();
     public finalRegistro() {
         JFrame registro = new JFrame("Registro");
         registro.setSize(400, 600);
@@ -31,11 +30,18 @@ public class finalRegistro {
         JPasswordField confContraIngresar =  new JPasswordField();
         confContraIngresar.setBounds(50, 290, 300, 30);
         registro.add(confContraIngresar);
-        
-        
 
         JButton continuar =  new JButton("Continuar");
         continuar.setBounds(50, 500, 120, 30);
+        
+        continuar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registro.dispose();
+                new SesionIniciada();
+            }
+        });
+        
         registro.add(continuar);
         registro.setLayout(null);
         registro.setVisible(true);
