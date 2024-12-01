@@ -19,6 +19,9 @@ public class Registro {
         JTextField OcupacionIngresar =  new JTextField();
         OcupacionIngresar.setBounds(50, 240, 300, 30);
         registro.add(OcupacionIngresar);
+        JButton continuar =  new JButton("Continuar");
+        continuar.setBounds(250, 500, 120, 30);
+        registro.add(continuar);
         registro.setLayout(null);
         registro.setVisible(true);
     }
