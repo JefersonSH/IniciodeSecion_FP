@@ -1,3 +1,4 @@
+import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -10,14 +11,15 @@ import java.awt.BorderLayout;
 public class TerminosCondiciones extends JFrame{
     public TerminosCondiciones() {
         // Configuración del JFrame
-        setTitle("Terminos y Condiciones UNM");
-        setSize(400, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
+        JFrame frame = new JFrame();
+        frame.setTitle("Terminos y Condiciones UNM");
+        frame.setSize(400, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
 
         JLabel lblUsuario = new JLabel("Terminos y Condiciones");
         lblUsuario.setBounds(35, 20, 300, 25);
-        add(lblUsuario);
+        frame.add(lblUsuario);
 
         // Contructor
         JTextArea tutorial = new JTextArea(
@@ -54,24 +56,28 @@ public class TerminosCondiciones extends JFrame{
         // Añadir el JTextArea al JFrame dentro de un JScrollPane
         JScrollPane scrollPane = new JScrollPane(tutorial);
         scrollPane.setBounds(35, 50, 320, 400);
-        add(scrollPane, BorderLayout.CENTER);
+        frame.add(scrollPane, BorderLayout.CENTER);
 
         JButton verMas = new JButton("Ver mas");
         verMas.setBounds(50, 450, 100, 30);
-        add(verMas);
+        frame.add(verMas);
 
         JCheckBox checkBox1 = new JCheckBox("Aceptar terminos y condiciones");
-        add(checkBox1);
+        frame.add(checkBox1);
         checkBox1.setBounds(50,480 , 200, 30);
 
-        JButton nexButton = new JButton("Continuar");
-        nexButton.setBounds(50, 512, 200, 30);
-        add(nexButton);
-
-        setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new TerminosCondiciones();
+        JButton nextButton = new JButton("Continuar");
+        nextButton.setBounds(50, 512, 200, 30);
+        
+        nextButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new finalRegistro();
+            }
+        });
+        
+        frame.add(nextButton);
+        frame.setVisible(true);
     }
 }

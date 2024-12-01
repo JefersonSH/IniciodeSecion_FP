@@ -5,7 +5,7 @@ import javax.swing.JTable;
 import javax.swing.ScrollPaneConstants;
 
 public class UsuariosRegistrados {
-    public static void main(String[] args) {
+    public UsuariosRegistrados() {
         // Configurar el frame
         JFrame frame = new JFrame();
         frame.setTitle("Usuarios Registrados");

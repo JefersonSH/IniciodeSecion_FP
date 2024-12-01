@@ -1,9 +1,10 @@
 import java.util.Hashtable;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Calificanos {
-    public static void main(String[] args) {
+    public Calificanos() {
         // Crear el slider
         JSlider slider = new JSlider(JSlider.HORIZONTAL, 1, 5, 3);
 
@@ -51,6 +52,14 @@ public class Calificanos {
 
         // Crear botón "Regresar"
         JButton regresar = new JButton("Regresar");
+        
+        regresar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PantallaInicio();
+            }
+            
+        });
 
         // Agregar componentes al JFrame
         frame.add(estrellasPanel, BorderLayout.NORTH);
