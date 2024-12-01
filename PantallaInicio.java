@@ -56,6 +56,9 @@ public class PantallaInicio extends JFrame {
         add(btnUsuariosRegistrados);
 
         // Botón "Califícanos"
+        JButton calificanosButton = new JButton("Calificanos");
+        calificanosButton.setBounds(50, 500, 120, 30); // Botón más pequeño en la esquina
+        add(calificanosButton);
     }
 
     private static ImageIcon redimensionarImagen(ImageIcon icon, int ancho, int alto) {
