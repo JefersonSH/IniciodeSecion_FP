@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 public class Terycon {
     public Terycon(){
-        JFrame terycon = new JFrame();
+        JFrame terycon = new JFrame("Terminos y Condiciones");
         terycon.setSize(400,600);
         terycon.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JTextArea Terminosycondiciones = new JTextArea();
-        Terminosycondiciones.setBounds(50,50,300,150);
+        Terminosycondiciones.setBounds(50,120,300,330);
         Terminosycondiciones.setLineWrap(true);
         Terminosycondiciones.setWrapStyleWord(true);
         Terminosycondiciones.setText("What is Lorem Ipsum?\r\n" + //
@@ -25,8 +25,11 @@ public class Terycon {
                         "Where can I get some?\r\n" + //
                         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.");
         JScrollPane scrollPane = new JScrollPane(Terminosycondiciones);
-        scrollPane.setBounds(50,50,300,150);
+        scrollPane.setBounds(50,120,300,330);
         terycon.add(scrollPane);
+        JCheckBox Acepto =  new JCheckBox("He leido y acepto los terminos y condiciones");
+        Acepto.setBounds(50,470,300,30);
+        terycon.add(Acepto);
         terycon.setLayout(null);
         terycon.setVisible(true);
     }
